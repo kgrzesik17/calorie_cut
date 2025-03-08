@@ -17,7 +17,6 @@ def calculate_metabolism(height, weight, age, sex):
 
     metabolism = round(metabolism)
 
-    print(metabolism)
     return metabolism
 
 units = 0
@@ -28,10 +27,12 @@ while units not in ['1', '2']:
     if units == '1':
         height = float(input('Enter your height in [centimeters]: '))
         weight = float(input('Enter your weight in [kilograms]: '))
+        goal = input('Enter how much weight do you want to lose [kilograms]')
 
     else:
         height = float(input('Enter your height in [feet\'inches]: '))
         weight = float(input('Enter your weight in [lbs]: '))
+        goal = input('Enter how much weight do you want to lose [lbs]: ')
 
         height = calculate_height(height)
         weight = calculate_weigth(weight)
@@ -39,9 +40,7 @@ while units not in ['1', '2']:
     age = int(input('Enter your age: '))
     sex = input('Enter your sex [M/F]: ').lower()
 
-    calculate_metabolism(height, weight, age, sex)
+    days = input('Enter in how many days do you want to reach your goal: ')
 
+    metabolism = calculate_metabolism(height, weight, age, sex)
     
-    
-def main(height, weight):
-    pass
