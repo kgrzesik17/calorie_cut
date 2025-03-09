@@ -44,8 +44,11 @@ def calculate_calories(metabolism, weight, days, goal, activity):
 
     print('Your daily metabolism is calculated to be: '+ str(round(metabolism)) + ' calories per day.')
     print('With all the daily activities, that comes to: '+ str(round(tdee)) + ' calories per day.')
-    print('You need to keep a ' + str(round(calorie_deficit_per_day)) + ' calorie deficit per day.')
-    print('That means you have to eat no more than ' + str(round(diet)) + ' calories per day for ' + str(days) + ' days to reach your goal.')
+    if calorie_deficit_overall >= 0:
+        print('You need to keep a ' + str(round(calorie_deficit_per_day)) + ' calorie deficit per day.')
+    else:
+        print('You need to keep a ' + str(round(-calorie_deficit_per_day)) + ' calorie surplus per day.')
+    print('That means you have to eat around than ' + str(round(diet)) + ' calories per day for ' + str(days) + ' days to reach your goal.')
 
 units = 0
 
